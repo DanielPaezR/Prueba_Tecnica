@@ -1,29 +1,36 @@
 # Sistema de Autenticación - Prueba Técnica
 
+Sistema completo de autenticación con **Spring Boot** en el backend y **React + TypeScript** en el frontend. Incluye registro de usuarios, confirmación por email, login con JWT, recuperación de contraseña y documentación con Swagger.
+
 ## 🚀 Tecnologías
-- **Backend:** Spring Boot 3.1.5, JPA, JWT, PostgreSQL
-- **Frontend:** React 18, TypeScript, Vite, Tailwind CSS
-
-## 📦 Requisitos
-- Java 17
-- PostgreSQL
-- Node.js 18+
-
-## 🛠️ Configuración
 
 ### Backend
-1. Crear base de datos: `CREATE DATABASE auth_db;`
-2. Configurar `src/main/resources/application.properties` con tus credenciales
-3. Ejecutar: `cd backend && mvn spring-boot:run`
+- **Java 17** + Spring Boot 3.1.5
+- Spring Security + JWT
+- Spring Data JPA (Hibernate)
+- PostgreSQL
+- Swagger / OpenAPI
+- Maven
 
 ### Frontend
-1. Instalar dependencias: `cd frontend && npm install`
-2. Ejecutar: `npm run dev`
+- **React 18** + TypeScript
+- Vite
+- Tailwind CSS
+- Axios
+- React Router DOM
 
-## 🔑 Endpoints principales
-- Swagger UI: `http://localhost:8081/swagger-ui.html`
-- Frontend: `http://localhost:5173`
+## 📋 Requisitos previos
 
-## 📝 Credenciales de prueba
-- Email: daniel@test.com
-- Contraseña: 123456
+- Java 17
+- Node.js 18+ y npm
+- PostgreSQL
+- Maven
+
+## 🛠️ Configuración e instalación
+
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/DanielPaezR/Prueba_Tecnica.git
+cd Prueba_Tecnica
+
+Nota: El envío de emails está simulado en consola para facilitar la prueba. Para producción, solo es necesario configurar spring.mail.* en application.properties.

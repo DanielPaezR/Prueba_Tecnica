@@ -41,6 +41,11 @@ public class EmailService {
     }
     
     public void enviarCorreoRecuperacion(String to, String nombre, String token) {
+        System.out.println("========================================");
+        System.out.println("ENLACE DE RECUPERACIÓN (copia esto):");
+        System.out.println(baseUrl + "/api/auth/recuperar-password?token=" + token);
+        System.out.println("========================================");
+        
         String asunto = "Recuperación de contraseña";
         String contenido = String.format(
                 "Hola %s,\n\n" +

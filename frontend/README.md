@@ -1,73 +1,59 @@
-# React + TypeScript + Vite
+# Sistema de Autenticación - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interfaz de usuario desarrollada con React, TypeScript y Tailwind CSS.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologías
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS
+- Axios
+- React Router DOM
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📋 Requisitos
+- Node.js 18+
+- npm
 
-## React Compiler
+## 🛠️ Instalación y ejecución
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+npm install
+npm run dev
 
-## Expanding the ESLint configuration
+El frontend estará disponible en http://localhost:5173
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🔗 Backend requerido
+El frontend consume la API del backend que debe estar corriendo en http://localhost:8081
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📁 Estructura del proyecto
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+frontend/
+├── src/
+│   ├── components/
+│   │   ├── Login.tsx
+│   │   ├── Register.tsx
+│   │   ├── Profile.tsx
+│   │   ├── Navbar.tsx
+│   │   └── ResetPassword.tsx
+│   ├── services/
+│   │   └── api.ts
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+├── index.html
+├── tailwind.config.js
+├── tsconfig.json
+└── package.json
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧪 Flujo de uso
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Registro: Ir a /register y completar el formulario
+2. Confirmación: Copiar el token de la consola del backend y visitar:
+   http://localhost:8081/api/auth/confirmar?token=TOKEN
+3. Login: Ir a /login con las credenciales
+4. Perfil: Ver información personal del usuario
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🎨 Estilos
+Se utiliza Tailwind CSS. Configuración en tailwind.config.js
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🔧 Configuración de API
+La URL base está en src/services/api.ts:
+const API_BASE_URL = 'http://localhost:8081/api'
